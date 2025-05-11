@@ -3,12 +3,11 @@
 # Wait for volumes to be available (optional)
 sleep 2
 
+npm install
 # Install backend dependencies
 composer install --no-interaction
 
 # Install frontend dependencies
-npm install
-
 php artisan db:wait
 # Run artisan commands
 php artisan migrate --force

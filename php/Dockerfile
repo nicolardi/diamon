@@ -10,8 +10,12 @@ RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
     apt-get install -y nodejs && \
     npm install -g npm
 
+
 # Copy the entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+
+RUN apt-get install -y dos2unix \
+  && dos2unix /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 

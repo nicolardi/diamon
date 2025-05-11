@@ -12,8 +12,6 @@ services:
       - laravel
     depends_on:
       - db
-    ports: 
-      - "5173:5173"
 
   web:
     image: nginx:stable

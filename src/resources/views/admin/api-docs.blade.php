@@ -12,6 +12,7 @@
     <h3>🔐 Autenticazione</h3>
     <p>L'accesso richiede un token JWT nel seguente header:</p>
     <pre><code>Authorization: Bearer &lt;token&gt;</code></pre>
+    <textarea disabled rows=10>{{ JWTAuth::fromUser(Auth::user()) }}</textarea>
 
     <h3>📤 Parametri Query</h3>
     <table border="1" cellpadding="6">

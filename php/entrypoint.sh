@@ -12,8 +12,8 @@ php artisan jwt:secret --force
 # Aspetta che il DB sia disponibile (se hai un comando custom tipo db:wait)
 php artisan db:wait
 
-# RESETTA IL DATABASE, cancella tutte le tabelle, migra e popola
-php artisan migrate:fresh --force --seed
+# Applica le migrazioni al database
+php artisan migrate --force
 
 # Avvia PHP-FPM
 exec php-fpm

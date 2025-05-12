@@ -49,9 +49,13 @@ Web application Laravel con login predefinito e **API autenticata con JWT** che 
    docker-compose up --build
    ```
 
-   > Questo comando costruisce l’ambiente, lancia migrazioni e il seeder che crea l’utente `root`.
+   > Questo comando costruisce l’ambiente, lancia migrazioni.
 
-4. Accedi all’applicazione:
+4. Attivazione utente root (lanciare solo la prima volta)
+ ```bash
+   docker exec laravel_app php artisan db:seed
+```
+5. Accedi all’applicazione:
    - Web: [http://localhost:9090](http://localhost:9090)
    - API: `GET http://localhost:9090/api/v1/breweries?page=1&per_page=10` (richiede token JWT)
    - PhpMyAdmin: [http://localhost:9091](http://localhost:9091) (user: `laravel`, password: `secret`)
